@@ -1,0 +1,52 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.search-icon {
+  background-image: url('../public/SearchIcon.svg');
+  background-position: 1rem center;
+  background-repeat: no-repeat;
+}
+
+.search-icon::-webkit-input-placeholder { /* Edge */
+  padding-left: 2rem !important;
+}
+
+.search-icon:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  padding-left: 2rem !important;
+}
+
+.search-icon::placeholder {
+  padding-left: 2rem !important;
+}
+
+.custom-badge {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -0.5rem;
+  right: -1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
