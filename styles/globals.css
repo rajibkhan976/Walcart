@@ -41,6 +41,18 @@ a {
   right: -1rem;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bg-active {
+  background-color: #FFF2F2;
+}
+
+.border-b {
+  border-bottom: 1px solid #F4F4F4
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -14,7 +14,7 @@ const HeaderMidRight = () => {
           <div className="col-4 d-flex align-items-center">
             <img src={UserIcon.src} className="d-inline-block img-fluid" />
           </div>
-          <div className="col-8 d-flex flex-column justify-content-start">
+          <div className="col-8 d-flex flex-column justify-content-start text-white">
             <span className="">Sign In</span>
             <span className="">Account</span>
           </div>

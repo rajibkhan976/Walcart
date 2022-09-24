@@ -7,7 +7,7 @@ import DiscountIcon from "../../public/DiscountIcon.svg";
 const Navbar = () => {
   return (
     <div className="row">
-      <div className="col-12 col-md-2 d-flex align-items-end">
+      <div className="col-12 col-md-2 mt-2 mt-md-0 d-flex align-items-end">
         <Dropdown
           items={["Top Categories"]}
           imgSrc={MenuBarIcon.src}

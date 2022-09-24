@@ -26,17 +26,15 @@ const Dropdown = (props: DropDownProps) => {
 
   return (
     <div
-      className={`d-inline-block ${
+      className={`d-inline-block position-relative ${
         isActive ? "bg-danger py-2 px-3 rounded-top" : ""
       }`}
-      style={{ position: "relative" }}
     >
       <div className="d-flex" ref={dropdownContainer}>
         {imgSrc && (
           <img
             src={imgSrc}
-            className="d-inline-block img-fluid"
-            style={{ cursor: "pointer" }}
+            className="d-inline-block img-fluid cursor-pointer"
           />
         )}
         <div className="d-flex flex-column">
@@ -58,17 +56,15 @@ const Dropdown = (props: DropDownProps) => {
         </div>
         <img
           src={iconSrc ? iconSrc : ArrowDown.src}
-          className="d-inline-block img-fluid px-1"
-          style={{ cursor: "pointer" }}
+          className="d-inline-block img-fluid px-1 cursor-pointer"
           onClick={() => setShowItems(!showItems)}
         />
       </div>
       <div
-        className={`d-flex flex-column bg-dark ${
+        className={`d-flex flex-column bg-dark position-absolute ${
           isActive ? "mt-2 px-4" : isSpecial ? "px-4" : ""
         }`}
         style={{
-          position: "absolute",
           zIndex: "10",
           left: "0",
           fontSize: "0.99rem",
@@ -80,8 +76,7 @@ const Dropdown = (props: DropDownProps) => {
           items.map((item, index) => (
             <span
               key={index}
-              className="d-inline-block py-2 px-4 text-white"
-              style={{ cursor: "pointer" }}
+              className="d-inline-block py-2 px-4 text-white cursor-pointer"
               onClick={() => {
                 setSelectedItem(item), setShowItems(false);
               }}
