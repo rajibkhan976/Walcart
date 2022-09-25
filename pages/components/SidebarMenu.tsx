@@ -10,7 +10,9 @@ const SidebarMenu = (props: SidebarMenuProps) => {
   const [isActive, setIsActive] = useState<number[]>([]);
   const [isSubItemActive, setSubItemIsActive] = useState<number[]>([]);
   const [leftCoOrd, setLeftCoOrd] = useState<number>(0);
+  const [subItemLeftCoOrd, setSubItemLeftCoOrd] = useState<number>(0);
   const sidebarMenuContainer = useRef<HTMLDivElement>(null);
+  const subItemContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (sidebarMenuContainer && sidebarMenuContainer.current) {
@@ -18,8 +20,14 @@ const SidebarMenu = (props: SidebarMenuProps) => {
     }
   }, [sidebarMenuContainer]);
 
+  useEffect(() => {
+    if (subItemContainer && subItemContainer.current) {
+      setSubItemLeftCoOrd(subItemContainer.current.offsetWidth);
+    }
+  }, [subItemContainer]);
+
   return (
-    <div className="col-12 col-md-3 mt-4 rounded shadow-sm">
+    <div className="col-12 col-md-3 mt-4 rounded shadow-sm bg-white">
       <div className="d-flex flex-column">
         {Array.isArray(items) &&
           items.map((item, index) => (
@@ -45,7 +53,7 @@ const SidebarMenu = (props: SidebarMenuProps) => {
               <div className="col-2 d-flex align-items-center justify-content-end">
                 <img
                   src={ArrowRight.src}
-                  className={`d-inline-block img-fluid float-end`}
+                  className={`d-inline-block img-fluid`}
                 />
               </div>
               {/*Medium and large screen*/}
@@ -68,7 +76,7 @@ const SidebarMenu = (props: SidebarMenuProps) => {
                           <div className="col-2 d-flex align-items-center justify-content-end">
                             <img
                               src={ArrowRight.src}
-                              className={`d-inline-block img-fluid float-end`}
+                              className={`d-inline-block img-fluid`}
                             />
                           </div>
                         )}
@@ -95,11 +103,12 @@ const SidebarMenu = (props: SidebarMenuProps) => {
               </div>
               {/*Small and extra small screen*/}
               <div
-                className="col-12 position-absolute d-none d-sm-none d-md-flex flex-md-column rounded shadow-sm"
+                className="col-9 position-absolute d-none d-sm-none d-md-flex flex-md-column rounded shadow-sm z-10 bg-white"
                 style={{
                   left: `${leftCoOrd}px`,
                   top: "0",
                 }}
+                ref={subItemContainer}
               >
                 {isActive.includes(index) &&
                   Array.isArray(item.subCategories) &&
@@ -117,14 +126,14 @@ const SidebarMenu = (props: SidebarMenuProps) => {
                           <div className="col-2 d-flex align-items-center justify-content-end">
                             <img
                               src={ArrowRight.src}
-                              className={`d-inline-block img-fluid float-end`}
+                              className={`d-inline-block img-fluid`}
                             />
                           </div>
                         )}
                       <div
-                        className="px-0 position-absolute d-flex flex-column rounded shadow-sm"
+                        className="px-0 position-absolute d-flex flex-column rounded shadow-sm bg-white w-75"
                         style={{
-                          left: `${leftCoOrd}px`,
+                          left: `${subItemLeftCoOrd}px`,
                           top: "0",
                         }}
                       >

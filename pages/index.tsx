@@ -7,7 +7,7 @@ import HomeScreen from "./components/HomeScreen";
 
 const Home: NextPage = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" style={{ backgroundColor: "#F5F5F5" }}>
       <Layout>
         <HomeScreen />
       </Layout>

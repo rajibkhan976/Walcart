@@ -7,6 +7,8 @@ import KitchenApplianceIcon from "../../public/KitchenApplianceIcon.svg";
 import ElectronicApplianceIcon from "../../public/ElectronicApplianceIcon.svg";
 import FastFoodIcon from "../../public/FastFoodIcon.svg";
 import MoreIcon from "../../public/MoreIcon.svg";
+import HomeContent from "./HomeContent";
+import HomeCategoryBar from "./HomeCategoryBar";
 
 const categories = [
   {
@@ -101,6 +103,8 @@ const HomeScreen = () => {
   return (
     <div className="row px-2">
       <SidebarMenu items={categories} />
+      <HomeContent />
+      <HomeCategoryBar />
     </div>
   );
 };

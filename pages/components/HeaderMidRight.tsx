@@ -2,8 +2,10 @@ import UserIcon from "../../public/UserIcon.svg";
 import FavoriteIcon from "../../public/FavoriteIcon.svg";
 import CartIcon from "../../public/CartIcon.svg";
 import { useState } from "react";
+import { connect } from "react-redux";
 
-const HeaderMidRight = () => {
+const HeaderMidRight = ({ counter }: any) => {
+  console.log(counter);
   const [favoriteCount, setFavoriteCount] = useState<number>(2);
   const [cartCount, setCartCount] = useState<number>(3);
 
@@ -38,7 +40,7 @@ const HeaderMidRight = () => {
         >
           <img src={CartIcon.src} className="d-inline-block img-fluid" />
           <span className="bg-danger rounded-circle d-flex justify-content-center align-items-center badge custom-badge">
-            {cartCount}
+            {counter}
           </span>
         </div>
       </div>
@@ -46,4 +48,8 @@ const HeaderMidRight = () => {
   );
 };
 
-export default HeaderMidRight;
+const mapStateToProps = (state: any) => ({
+  counter: state.counter.value,
+});
+
+export default connect(mapStateToProps, null)(HeaderMidRight);
