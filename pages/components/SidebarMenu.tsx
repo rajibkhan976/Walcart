@@ -56,7 +56,7 @@ const SidebarMenu = (props: SidebarMenuProps) => {
                   className={`d-inline-block img-fluid`}
                 />
               </div>
-              {/*Medium and large screen*/}
+              {/*Small and extra small screen*/}
               <div className="d-flex flex-column d-sm-flex flex-sm-column d-md-none bg-white mt-2">
                 {isActive.includes(index) &&
                   Array.isArray(item.subCategories) &&
@@ -101,7 +101,7 @@ const SidebarMenu = (props: SidebarMenuProps) => {
                     </div>
                   ))}
               </div>
-              {/*Small and extra small screen*/}
+              {/*Medium and large screen*/}
               <div
                 className="col-9 position-absolute d-none d-sm-none d-md-flex flex-md-column rounded shadow-sm z-10 bg-white"
                 style={{
