@@ -26,6 +26,19 @@ const SidebarMenu = (props: SidebarMenuProps) => {
     }
   }, [subItemContainer]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (sidebarMenuContainer && sidebarMenuContainer.current) {
+        setLeftCoOrd(sidebarMenuContainer.current.offsetWidth);
+      }
+      if (subItemContainer && subItemContainer.current) {
+        setSubItemLeftCoOrd(subItemContainer.current.offsetWidth);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
   return (
     <div className="col-12 col-md-3 mt-4 rounded shadow-sm bg-white">
       <div className="d-flex flex-column">
